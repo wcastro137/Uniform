@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VMS Uniform Order Form 2024–2025</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f9f9f9; }
+    h2 { background: #ffa726; color: #fff; padding: 10px; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    th { background-color: #eee; }
+    input[type='number'] { width: 60px; }
+    input[readonly] { background-color: #f0f0f0; }
+    .section { margin-bottom: 60px; }
+  </style>
+</head>
+<body>
+  <h1>VMS UNIFORM ORDER FORM 2024–2025</h1>
+  <form id="uniformForm" method="POST" action="YOUR_GOOGLE_SCRIPT_URL">
+
+    <!-- Girls Gala Uniform -->
+    <div class="section">
+      <h2>GIRLS GALA UNIFORM</h2>
+      <table>
+        <tr><th>Size</th><th>Price</th><th>Qty</th><th>Total</th></tr>
+        <script>
+          const girlsGala = [
+            ["60", 850], ["65", 860], ["70", 870], ["75", 880], ["80", 890], ["85", 900],
+            ["90", 930], ["95", 940], ["SM", 950], ["M", 960], ["L", 970], ["XL", 990]
+          ];
+        </script>
+      </table>
+    </div>
+
+    <!-- High School -->
+    <div class="section">
+      <h2>HIGH SCHOOL UNIFORM</h2>
+      <table>
+        <tr><th>Size</th><th>Price</th><th>Qty</th><th>Total</th></tr>
+        <tr><td>XS/S</td><td>960</td><td><input type="number" name="hs_xs_qty" oninput="calc(this,960)"></td><td><input readonly name="hs_xs_total"></td></tr>
+        <tr><td>M/L</td><td>1020</td><td><input type="number" name="hs_ml_qty" oninput="calc(this,1020)"></td><td><input readonly name="hs_ml_total"></td></tr>
+        <tr><td>XL/XXL</td><td>1060</td><td><input type="number" name="hs_xxl_qty" oninput="calc(this,1060)"></td><td><input readonly name="hs_xxl_total"></td></tr>
+      </table>
+    </div>
+
+    <!-- PE Uniform -->
+    <div class="section">
+      <h2>P.E. UNIFORM</h2>
+      <table>
+        <tr><th>Category</th><th>Item</th><th>Price</th><th>Qty</th><th>Total</th></tr>
+        <tr><td>Pre-Elementary</td><td>T-Shirt</td><td>665</td><td><input type="number" name="pe_pre_ts_qty" oninput="calc(this,665)"></td><td><input readonly name="pe_pre_ts_total"></td></tr>
+        <tr><td></td><td>J.Pants</td><td>605</td><td><input type="number" name="pe_pre_jp_qty" oninput="calc(this,605)"></td><td><input readonly name="pe_pre_jp_total"></td></tr>
+        <tr><td></td><td>Set</td><td>1270</td><td><input type="number" name="pe_pre_set_qty" oninput="calc(this,1270)"></td><td><input readonly name="pe_pre_set_total"></td></tr>
+
+        <tr><td>Primary</td><td>T-Shirt</td><td>690</td><td><input type="number" name="pe_pri_ts_qty" oninput="calc(this,690)"></td><td><input readonly name="pe_pri_ts_total"></td></tr>
+        <tr><td></td><td>J.Pants</td><td>630</td><td><input type="number" name="pe_pri_jp_qty" oninput="calc(this,630)"></td><td><input readonly name="pe_pri_jp_total"></td></tr>
+        <tr><td></td><td>Set</td><td>1320</td><td><input type="number" name="pe_pri_set_qty" oninput="calc(this,1320)"></td><td><input readonly name="pe_pri_set_total"></td></tr>
+
+        <tr><td>Intermediate</td><td>T-Shirt</td><td>700</td><td><input type="number" name="pe_int_ts_qty" oninput="calc(this,700)"></td><td><input readonly name="pe_int_ts_total"></td></tr>
+        <tr><td></td><td>J.Pants</td><td>670</td><td><input type="number" name="pe_int_jp_qty" oninput="calc(this,670)"></td><td><input readonly name="pe_int_jp_total"></td></tr>
+        <tr><td></td><td>Set</td><td>1370</td><td><input type="number" name="pe_int_set_qty" oninput="calc(this,1370)"></td><td><input readonly name="pe_int_set_total"></td></tr>
+
+        <tr><td>High School</td><td>T-Shirt</td><td>775</td><td><input type="number" name="pe_hs_ts_qty" oninput="calc(this,775)"></td><td><input readonly name="pe_hs_ts_total"></td></tr>
+        <tr><td></td><td>J.Pants</td><td>675</td><td><input type="number" name="pe_hs_jp_qty" oninput="calc(this,675)"></td><td><input readonly name="pe_hs_jp_total"></td></tr>
+        <tr><td></td><td>Set</td><td>1450</td><td><input type="number" name="pe_hs_set_qty" oninput="calc(this,1450)"></td><td><input readonly name="pe_hs_set_total"></td></tr>
+      </table>
+    </div>
+
+    <!-- Misc Items -->
+    <div class="section">
+      <h2>MISCELLANEOUS ITEMS</h2>
+      <table>
+        <tr><th>Item</th><th>Price</th><th>Qty</th><th>Total</th></tr>
+        <tr><td>Ribbon</td><td>95</td><td><input type="number" name="ribbon_qty" oninput="calc(this,95)"></td><td><input readonly name="ribbon_total"></td></tr>
+        <tr><td>Belt</td><td>95</td><td><input type="number" name="belt_qty" oninput="calc(this,95)"></td><td><input readonly name="belt_total"></td></tr>
+        <tr><td>Patch</td><td>100</td><td><input type="number" name="patch_qty" oninput="calc(this,100)"></td><td><input readonly name="patch_total"></td></tr>
+      </table>
+    </div>
+
+    <button type="submit">Submit Order</button>
+  </form>
+
+  <script>
+    function calc(input, price) {
+      const qty = parseInt(input.value) || 0;
+      const totalField = input.parentElement.nextElementSibling.firstElementChild;
+      totalField.value = (qty * price).toFixed(2);
+    }
+  </script>
+</body>
+</html>
